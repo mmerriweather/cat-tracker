@@ -14,17 +14,8 @@ export class CatFormComponent {
     public cats: Cats[];
     
 }
-ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-        this.cats = +params['cats']; // (+) converts string 'id' to a number
-        let cats = new Cats(this.http, this.Url);
-        cats.get(this.questionID).subscribe(result => {
-            this.cats.push(result.json());
-        }, error => console.error(error));
 
-        this.reload();
-    });
-}
-onAddClicked(event: any) {
-    let catsform = new CatsForm(this.http, this.Url);
-}
+
+// onAddClicked(event: any) {
+//     let catsform = new CatsForm(this.http, this.Url);
+// }
