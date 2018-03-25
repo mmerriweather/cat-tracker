@@ -7,24 +7,24 @@
     Cat Name:
 </div>
 <div>
-    <input id="catName" type="text" />
+    <input id="catName" type="text" [(ngModel)]="cat.catName" />
 </div>
 <div>
     Cat Breed:
 </div>
 <div>
-    <input id="catBreed" type="text" />
+    <input id="catBreed" type="text" [(ngModel)]="cat.catBreed" />
 </div>
 <div>
     Cat Status:
 </div>
 <div>
-    <input id="catBreed" type="text" *ngIf="cats"/>
+    <input id="catBreed" type="text" *ngIf="cats" [(ngModel)]="cat.catStatus"/>
 
 </div>
 <div>
     <!-- <a href="#" >Submit</a> -->
-    <button type="button"> Add Cat </button>
+    <button type="button" (click)="onAddClicked($event)"> Add Cat </button>
 </div>
 
 <div>
