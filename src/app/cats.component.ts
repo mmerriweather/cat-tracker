@@ -17,20 +17,20 @@ export class CatsComponent {
     public cat: Cats;
     private sub: any;
 
-   
-
+    catService = new CatService(;
+    
     public constructor(catService: CatService) {
-        this.cat = new Cats;
-        this.cats = [];
+       this.cat = new Cats;
+       this.catService = new CatService;
+       this.cats = [];
         catService.getAll().subscribe(result => {
-            this.cats.push(...result);
+        this.cats.push(...result);
         }, error => console.error(error));  
     }
     
     
     onAddClicked(event: any) {
-        
-        catService.insert(this.cat).subscribe(result => {
+        this.catService.insert(this.cat).subscribe(result => {
             this.cats.push(...result);
         }, error => console.error(error));  
     }
