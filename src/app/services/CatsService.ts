@@ -9,7 +9,8 @@ export class CatService {
     constructor(private http: HttpClient) { }
 
     public getAll() {
-        return this.http.get<Cats[]>(this.url);
+        return [{catName:'cat1',catBreed:'test',catId:1,catStatus:'alive'},
+                {catName:'cat2',catBreed:'test',catId:2,catStatus:'alive'}];
     }
 
     public get(id: number) {
@@ -17,6 +18,8 @@ export class CatService {
     }
 
     public insert(cats: Cats) {
-         return this.http.post(this.url , cats);
+        alert('insert view console log for detail');
+        console.log(cats);
+        return this.http.post(this.url , cats);
     }
 }

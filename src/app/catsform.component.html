@@ -19,14 +19,8 @@
     Cat Status:
 </div>
 <div>
-    <input id="catBreed" type="text" *ngIf="cats" [(ngModel)]="cat.catStatus"/>
-
+    <input id="catBreed" type="text" [(ngModel)]="cat.catStatus"/>
 </div>
 <div>
-    <!-- <a href="#" >Submit</a> -->
     <button type="button" (click)="onAddClicked($event)"> Add Cat </button>
-</div>
-
-<div>
-    
 </div>

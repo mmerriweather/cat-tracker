@@ -10,13 +10,13 @@ import { Inject, EventEmitter, Input, Output } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class CatFormComponent {
+    public cat: Cats;
 
-    public cats: Cats[];
-    
-    
+    public constructor(private catService: CatService) {
+        this.cat = new Cats;
+     }    
+
+    onAddClicked(event: any) {
+        this.catService.insert(this.cat);  
+    }   
 }
-
-
-// onAddClicked(event: any) {
-//     let catsform = new CatsForm(this.http, this.Url);
-// }
