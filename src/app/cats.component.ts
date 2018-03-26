@@ -14,25 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
 export class CatsComponent {
     title = 'cats';
     public cats: Cats[];
-    public cat: Cats;
     private sub: any;
-
-    catService = new CatService(;
     
-    public constructor(catService: CatService) {
-       this.cat = new Cats;
-       this.catService = new CatService;
+    public constructor(private catService: CatService) {
        this.cats = [];
-        catService.getAll().subscribe(result => {
-        this.cats.push(...result);
-        }, error => console.error(error));  
-    }
-    
-    
-    onAddClicked(event: any) {
-        this.catService.insert(this.cat).subscribe(result => {
-            this.cats.push(...result);
-        }, error => console.error(error));  
+       let result = catService.getAll();
+       this.cats.push(...result); 
     }
 }
 
